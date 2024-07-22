@@ -10,9 +10,10 @@ import SwiftData
 
 @Model
 class User {
-    var name: String
-    var city: String
-    var joinDate: Date
+    let name: String
+    let city: String
+    let joinDate: Date
+    @Relationship(deleteRule: .cascade) var jobs = [Job]()
     
     init(name: String, city: String, joinDate: Date) {
         self.name = name
